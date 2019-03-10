@@ -1,4 +1,4 @@
-## Copyright (C) 2019 student
+## Copyright (C) 2019 Kulinar
 ## 
 ## This program is free software: you can redistribute it and/or modify it
 ## under the terms of the GNU General Public License as published by
@@ -15,14 +15,14 @@
 ## <https://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*- 
-## @deftypefn {} {@var{retval} =} func (@var{input1}, @var{input2})
+## @deftypefn {} {@var{retval} =} Derivative (@var{input1}, @var{input2})
 ##
 ## @seealso{}
 ## @end deftypefn
 
-## Author: student <student@DESKTOP-ID15QGS>
-## Created: 2019-02-08
+## Author: Kulinar <Kulinar@KULINAR-PC>
+## Created: 2019-03-10
 
-function retval = func (x)
-  retval = x.*x.*x-4.8*x.*x+3.3*x+5;
+function retval = Derivative (x)
+  retval = 3*x.*x-9.6*x+3.3;
 endfunction

@@ -1,4 +1,4 @@
-## Copyright (C) 2019 student
+## Copyright (C) 2019 Kulinar
 ## 
 ## This program is free software: you can redistribute it and/or modify it
 ## under the terms of the GNU General Public License as published by
@@ -15,14 +15,39 @@
 ## <https://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*- 
-## @deftypefn {} {@var{retval} =} func (@var{input1}, @var{input2})
+## @deftypefn {} {@var{retval} =} SimpleNewton (@var{input1}, @var{input2})
 ##
 ## @seealso{}
 ## @end deftypefn
 
-## Author: student <student@DESKTOP-ID15QGS>
-## Created: 2019-02-08
+## Author: Kulinar <Kulinar@KULINAR-PC>
+## Created: 2019-03-10
 
-function retval = func (x)
-  retval = x.*x.*x-4.8*x.*x+3.3*x+5;
+%-1 => -0.7
+%0 - badtest
+%1 => 2.1
+%2 => 2.1
+%3 - badtest
+%10 => 3.4
+
+function X = SimpleNewton ()
+  %-1 => -0.7
+  %0 - badtest
+  %1 => 2.1
+  %2 => 2.1
+  %3 - badtest
+  %10 => 3.4
+  oldX = input("Enter x0: ");
+  i = 0;
+  pr = Derivative(oldX);
+  X = oldX - func(oldX)/pr;
+  while abs(oldX - X) > 1e-3
+    oldX = X;
+    i = i + 1;
+    X = oldX - func(oldX)/pr
+  endwhile
+  i
+  %X
+  Y = func (X);
+  printf("Nevazka %d\n", Y);
 endfunction
