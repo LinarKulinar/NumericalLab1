@@ -1,2 +1,2 @@
 # NumericalLab1
-Testspace for Lab in Samara University 
+Лабораторные работы по Численным методам 
