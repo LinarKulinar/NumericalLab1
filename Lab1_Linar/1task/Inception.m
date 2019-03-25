@@ -27,7 +27,8 @@ function retval = Inception ()
 E = 1e-3;
 
 x0 = input("Enter x0: ");
-x1 = input("Enter x1: "); 
+h = input("Enter h: ");
+x1 = x0+h; 
 if (abs(x0 - x1) < 2*E)
   disp("Incorrect input. Try again");
 endif

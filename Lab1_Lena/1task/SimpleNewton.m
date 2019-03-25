@@ -40,11 +40,11 @@ function X = SimpleNewton ()
   oldX = input("Enter x0: ");
   i = 0;
   pr = Derivative(oldX);
-  X = oldX - func(oldX)/pr;
+  X = oldX - 0.1*func(oldX)/pr;
   while abs(oldX - X) > 1e-3
     oldX = X;
     i = i + 1;
-    X = oldX - func(oldX)/pr
+    X = oldX - 0.1*func(oldX)/pr
   endwhile
   i
   %X

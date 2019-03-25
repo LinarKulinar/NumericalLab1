@@ -29,4 +29,5 @@ function retval = plotFunc (func)
   xlabel('X');
   ylabel('Y');
   plot(x, y);
+  grid on; % Рисуем линии сетки.
 endfunction

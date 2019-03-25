@@ -1,4 +1,4 @@
-## Copyright (C) 2019 Кулинар
+## Copyright (C) 2019 Kulinar
 ## 
 ## This program is free software: you can redistribute it and/or modify it
 ## under the terms of the GNU General Public License as published by
@@ -15,15 +15,15 @@
 ## <https://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*- 
-## @deftypefn {} {@var{retval} =} NewtonForSystem (@var{input1}, @var{input2})
+## @deftypefn {} {@var{retval} =} SimpleNewtonForSystem (@var{input1}, @var{input2})
 ##
 ## @seealso{}
 ## @end deftypefn
 
-## Author: Кулинар <Кулинар@КУЛИНАР-ПК>
-## Created: 2019-03-06
+## Author: Kulinar <Kulinar@KULINAR-PC>
+## Created: 2019-03-21
 
-function retval = NewtonForSystem ()
+function retval = SimpleNewtonForSystem ()
 E = 1e-5;
 lastans = zeros(2,1);
 lastans(1) = input("Input x0 "); % начальное приближение
@@ -46,13 +46,13 @@ while (sqrt((ans-lastans).*(ans-lastans))> 2*E && iter<50) % вторая норма
   y = ans(2);
   lastans = ans;
   F = [sin(x)+2*y-2; 2*x+cos(y-1)-0.7];
-  I = [cos(x), 2; 2, -sin(y-1)];
-  Iinv = 1/(I(1,1)*I(2,2)-I(1,2)*I(2,1))*[I(2,2), -I(1,2); -I(2,1), I(1,1)];
+  %I = [cos(x), 2; 2, -sin(y-1)];
+  %Iinv = 1/(I(1,1)*I(2,2)-I(1,2)*I(2,1))*[I(2,2), -I(1,2); -I(2,1), I(1,1)];
   ans = lastans - Iinv*F;
   %disp(F);
   %disp(Iinv);
   %disp(-Iinv*F);
-  Iinv = 1/(I(1,1)*I(2,2)-I(1,2)*I(2,1))*[I(2,2), -I(1,2); -I(2,1), I(1,1)];
+  %Iinv = 1/(I(1,1)*I(2,2)-I(1,2)*I(2,1))*[I(2,2), -I(1,2); -I(2,1), I(1,1)];
   
   #disp(ans);
   #disp("___________________");
@@ -60,7 +60,6 @@ endwhile
 retval = ans;
 iter
 F = [sin(x)+2*y-2; 2*x+cos(y-1)-0.7]
-Fnorn = sqrt((sin(x)+2*y-2)*(sin(x)+2*y-2)+(2*x+cos(y-1)-0.7)*(2*x+cos(y-1)-0.7))
-disp(0.00001)
+Fnorm = sqrt((sin(x)+2*y-2)*(sin(x)+2*y-2)+(2*x+cos(y-1)-0.7)*(2*x+cos(y-1)-0.7))
 
 endfunction

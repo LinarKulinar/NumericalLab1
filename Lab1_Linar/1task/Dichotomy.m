@@ -25,8 +25,8 @@
 
 function retval = Dichotomy (a, b)
 E = 1e-3;  
-a = 4
-b = 5
+a = input("Enter a: ");
+b = input("Enter b: ");
 i = 0;
 
 while abs(b - a) > 2*E;

@@ -26,10 +26,15 @@
 function retval = SystemFunc ()\
 
 x = linspace(-4, 4, 1000);
-a = cos(0.5*sin(x));
-b = 0.7 - 2*x;
-plot(x, a, x, b);
-title('cos(sin(x)) = 0.7 - 2x'); % Подпись над графиком.
+%a = cos(-0.5*sin(x));
+%b = 0.7 - 2*x;
+%plot(x, a, x, b);
+a = 1-1/2*sin(x);
+y = linspace(-4, 4, 1000);
+b = 0.35-1/2*cos(y-1)
+plot(x,a,b,y);
+
+%title('cos(-0.5*sin(x)) = 0.7 - 2x'); % Подпись над графиком.
 xlabel('X'); % Подпись оси X.			
 ylabel('Y'); % Подпись оси Y.
 grid on; % Рисуем линии сетки.
